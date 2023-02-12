@@ -16,6 +16,6 @@ const NotFoundPage = () => (
   </Layout>
 )
 
-export const Head = () => <Seo title="Page Not Found" />
+export const Head = () => <Seo title="Not Found | OpenList" />
 
 export default NotFoundPage

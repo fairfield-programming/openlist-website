@@ -60,6 +60,6 @@ const IndexPage = () => (
     </Layout>
 )
 
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="FPA OpenList" />
 
 export default IndexPage

@@ -111,6 +111,6 @@ const IndexPage = () => (
     </Layout>
 )
 
-export const Head = () => <Seo title="Public API" />
+export const Head = () => <Seo title="Public API | OpenList" />
 
 export default IndexPage

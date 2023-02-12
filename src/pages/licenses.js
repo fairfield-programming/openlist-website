@@ -33,6 +33,6 @@ const IndexPage = () => {
     </Layout>
 }
 
-export const Head = () => <Seo title="Licenses" />
+export const Head = () => <Seo title="Licenses | OpenList" />
 
 export default IndexPage

@@ -44,6 +44,12 @@ const UsingDSG = ({ pageContext }) => {
   </Layout>
 }
 
-export const Head = () => <Seo title="Using DSG" />
+export const Head = ({ pageContext }) => {
+
+  const { name, since, creator, description, body } = pageContext
+  
+  return <Seo title={`${name} | OpenList`} description={description || body} />
+
+}
 
 export default UsingDSG
