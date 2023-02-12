@@ -24,15 +24,15 @@ module.exports = {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: false,
-        sitemap: 'https://about.fairfieldprogramming.org/sitemap/sitemap-index.xml',
+        sitemap: 'https://openlist.fairfieldprogramming.org/sitemap/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Fairfield Programming Association`,
-        short_name: `fpa`,
+        name: `FPA OpenList`,
+        short_name: `openlist`,
         start_url: `/`,
         background_color: `#0F006C`,
         theme_color: `#0F006C`,
