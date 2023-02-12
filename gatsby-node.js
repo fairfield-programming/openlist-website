@@ -25,7 +25,7 @@ exports.createPages = async ({ actions }) => {
       path: `/licenses/${element.id}`,
       component: require.resolve("./src/templates/license.js"),
       context: element,
-      defer: true,
+      defer: process.env.NODE_ENV != "production",
     })
 
   });
