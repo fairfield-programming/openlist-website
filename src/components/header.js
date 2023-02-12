@@ -8,7 +8,7 @@ const Header = ({ siteTitle }) => (
   >
     <Link
       to="/"
-      className="flex h-10 px-4 font-bold items-center justify-center rounded-lg border-2 border-slate-100"
+      className="flex h-10 whitespace-nowrap px-4 font-bold items-center justify-center rounded-lg border-2 border-slate-100"
     >
       <span class="sr-only">OpenList Logo</span>
       🦋 OpenList
@@ -17,8 +17,8 @@ const Header = ({ siteTitle }) => (
     <ul class="flex items-center gap-2 text-sm font-medium text-gray-500">
 
       <li><Link className="rounded-lg px-3 py-2" to="/licenses"> Licenses </Link></li>
-      <li><Link className="rounded-lg px-3 py-2" to="/api"> API </Link></li>
-      <li><Link className="rounded-lg px-3 py-2" to="/sdk"> SDK </Link></li>
+      <li><Link className="rounded-lg px-3 py-2 md:block hidden" to="/api"> API </Link></li>
+      <li><Link className="rounded-lg px-3 py-2 md:block hidden" to="/sdk"> SDK </Link></li>
 
       <li>
         <Link
