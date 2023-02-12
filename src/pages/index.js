@@ -16,7 +16,7 @@ const IndexPage = () => (
       </section>
       <section className="max-w-5xl mt-16 p-4 mx-auto">
         <h2 className="text-3xl font-black text-center">How would you describe your project?</h2>
-        <div className="grid grid-cols-3 mt-8">
+        <div className="grid md:grid-cols-3 md:grid-rows-1 md:gap-0 grid-rows-3 gap-4 mt-8">
           <div className="px-4">
             <h3 className="text-xl font-bold mb-2">It's Part of an Existing Community.</h3>
             <p className="text-md font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -33,7 +33,7 @@ const IndexPage = () => (
       </section>
       <section className="max-w-5xl mt-16 p-4 mx-auto">
         <h2 className="text-3xl font-black text-center">Can't find what you're looking for?</h2>
-        <div className="grid grid-cols-3 mt-8">
+        <div className="grid md:grid-cols-3 md:grid-rows-1 md:gap-0 grid-rows-3 gap-4 mt-8">
           <div className="px-4">
             <h3 className="text-xl font-bold mb-2">My project isn't open-source or source-available.</h3>
             <p className="text-md font-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
