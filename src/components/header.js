@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
 
       <li><Link className="rounded-lg px-3 py-2" to="/licenses"> Licenses </Link></li>
       <li><Link className="rounded-lg px-3 py-2 md:block hidden" to="/api"> API </Link></li>
-      <li><Link className="rounded-lg px-3 py-2 md:block hidden" to="/sdk"> SDK </Link></li>
+      {/* <li><Link className="rounded-lg px-3 py-2 md:block hidden" to="/sdk"> SDK </Link></li> */}
 
       <li>
         <Link
