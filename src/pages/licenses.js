@@ -7,18 +7,9 @@ import LicenseListItem from "../components/licenseListItem"
 
 const IndexPage = () => {
 
-    const [ licenses, setLicenses ] = React.useState([]);
+    const licenses = require('../res/licenses.json')
     const [ search, setSearch ] = React.useState("");
     
-    React.useEffect(async () => {
-
-        const licenseRaw = await fetch('https://fairfield-programming.github.io/openlist/licenses/download');
-        const licenseJson = await licenseRaw.json();
-
-        setLicenses(licenseJson);
-
-    }, [ ]);
-
     return <Layout>
       <main>
         <section className="max-w-5xl mt-16 p-4 mx-auto">
