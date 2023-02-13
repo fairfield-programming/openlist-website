@@ -4,9 +4,11 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import LicenseAttribute from "../components/licenseAttribute"
+
 const UsingDSG = ({ pageContext }) => {
 
-  let { name, since, creator, description, body } = pageContext
+  let { name, since, creator, description, body, permissions, conditions, limitations } = pageContext
 
   return <Layout>
     <section className="max-w-5xl mt-16 p-4 mx-auto">
@@ -22,8 +24,29 @@ const UsingDSG = ({ pageContext }) => {
       }
       </div>
     </section>
-    <section className="max-w-5xl p-4 mx-auto">
+    { description != undefined ?? <section className="max-w-5xl p-4 mx-auto">
       <p>{ description }</p>
+    </section>
+    }
+    <section className="max-w-5xl p-4 mx-auto grid grid-cols-3">
+      <div>
+          <h3 className="text-md font-bold">Permissions</h3>
+          {
+              permissions.map(i => LicenseAttribute({ name: i, enabled: true, type: "permission" }))
+          }
+      </div>
+      <div>
+          <h3 className="text-md font-bold">Conditions</h3>
+          {
+              conditions.map(i => LicenseAttribute({ name: i, enabled: true, type: "condition" }))
+          }
+      </div>
+      <div>
+          <h3 className="text-md font-bold">Limitations</h3>
+          {
+              limitations.map(i => LicenseAttribute({ name: i, enabled: true, type: "limitation" }))
+          }
+      </div>
     </section>
     <section className="max-w-5xl p-4 mx-auto">
       <div className="bg-slate-50 rounded-lg my-8 overflow-hidden">
