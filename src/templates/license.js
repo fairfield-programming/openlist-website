@@ -14,7 +14,7 @@ const UsingDSG = ({ pageContext }) => {
       <div className="flex flex-row gap-1">
       {
         [
-          (since != undefined && since != [] && since != "") != undefined ? <p className="font-light text-xl">Since {since}</p> : false,
+          (since != undefined && typeof since == "string" && since.length > 0) ? <p className="font-light text-xl">Since {since}</p> : false,
           (creator != undefined && creator != [] && creator != "") ? <p className="font-light text-xl">By {creator}</p> : false
         ].filter(i => i).reduce((accu, elem) => {
           return accu === null ? [elem] : [...accu, " • ", elem]
