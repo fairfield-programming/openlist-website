@@ -11,7 +11,7 @@ const Footer = ({ siteTitle }) => (
         </div>
   
         <p class="mt-4 text-center text-sm text-gray-500 lg:mt-0 lg:text-right">
-          Copyright &copy; { new Date().getFullYear() }. All rights reserved.
+          Copyright &copy; { new Date().getFullYear() }. All rights reserved. <br />This is a database, not legal advice. Please consult a lawyer when picking a license.
         </p>
       </div>
     </div>
