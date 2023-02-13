@@ -6,17 +6,21 @@ import Seo from "../components/seo"
 
 const UsingDSG = ({ pageContext }) => {
 
-  const { name, since, creator, description, body } = pageContext
+  let { name, since, creator, description, body } = pageContext
 
   return <Layout>
     <section className="max-w-5xl mt-16 p-4 mx-auto">
       <h2 className="text-4xl font-black">{ name }</h2>
+      <div className="flex flex-row gap-1">
       {
         [
-          since ?? <p>Since {since}</p>,
-          creator ?? <p>By {creator}</p>
-        ]
+          since != undefined ? <p className="font-light text-xl">Since {since}</p> : false,
+          (creator != undefined && creator != [] && creator != "") ? <p className="font-light text-xl">By {creator}</p> : false
+        ].filter(i => i).reduce((accu, elem) => {
+          return accu === null ? [elem] : [...accu, " • ", elem]
+        }, null)
       }
+      </div>
     </section>
     <section className="max-w-5xl p-4 mx-auto">
       <p>{ description }</p>
