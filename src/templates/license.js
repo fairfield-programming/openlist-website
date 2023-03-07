@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 import LicenseAttribute from "../components/licenseAttribute"
+import { Helmet } from "react-helmet"
 
 const baseUrl = `https://fairfield-programming.github.io/openlist`
 
@@ -22,14 +23,28 @@ const UsingDSG = ({ pageContext }) => {
   } = pageContext
   const [copytext, setCopytext] = React.useState("")
 
-  const questions = [
+  const faqQuestions = [
     {
-      id: "question-modification-support",
       question: `Does ${name} license support modification?`,
       answer: "Yes",
     },
     // add more questions here
   ]
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqQuestions.map(q => {
+      return {
+        "@type": "Question",
+        name: q.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: q.answer,
+        },
+      }
+    }),
+  }
 
   React.useEffect(() => {
     if (copytext == "") return
@@ -42,6 +57,9 @@ const UsingDSG = ({ pageContext }) => {
 
   return (
     <Layout>
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      </Helmet>
       <section className="max-w-5xl mt-16 p-4 mx-auto">
         <h2 className="text-4xl font-black">{name}</h2>
         <div className="flex flex-row gap-1">
@@ -144,8 +162,8 @@ const UsingDSG = ({ pageContext }) => {
           Frequently Asked Questions (FAQs)
         </h3>
         <div className="space-y-4">
-          {questions.map(({ id, question, answer }, index) => (
-            <div key={id}>
+          {faqQuestions.map(({ question, answer }, index) => (
+            <div key={index}>
               <p className="text-2xl font-bold">
                 Q{index + 1}. {question}
               </p>
